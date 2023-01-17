@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TitelTextStyle">
+        <item name="android:textSize">21sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/green_grey_dark</item>
+        <item name="android:fontFamily">@font/bungee</item>
+    </style>
+
+    <style name="EntryNameTextStyle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/green_grey_dark</item>
+    </style>
+
+    <style name="EntryNumberTextStyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/blue_mid</item>
+    </style>
+
+    <style name="InputTextStyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white_variant</item>
+    </style>
+
+    <style name="NewEntryButtonStyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white_variant</item>
+        <item name="android:backgroundTint">@color/blue_mid</item>
+    </style>
+</resources>
