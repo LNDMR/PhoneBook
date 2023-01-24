@@ -8,13 +8,24 @@
     </style>
 
     <style name="EntryNameTextStyle">
-        <item name="android:textSize">18sp</item>
+    <item name="android:textSize">18sp</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:textColor">@color/green_grey_dark</item>
+</style>
+
+    <style name="EntryNumberTextStyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/blue_mid</item>
+    </style>
+
+    <style name="DetailNameTextStyle">
+        <item name="android:textSize">24sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/green_grey_dark</item>
     </style>
 
-    <style name="EntryNumberTextStyle">
-        <item name="android:textSize">14sp</item>
+    <style name="DetailNumberTextStyle">
+        <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/blue_mid</item>
     </style>
 

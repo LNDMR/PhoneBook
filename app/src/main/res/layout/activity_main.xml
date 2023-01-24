@@ -13,149 +13,16 @@
         android:background="@color/white_variant"
         tools:context=".MainActivity">
 
-        <ImageView
-            android:id="@+id/imageView"
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="fitXY"
+            app:defaultNavHost="true"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/bg_light_title" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/titel_image_card"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@id/titel_card"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/titel_card"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:translationZ="1dp"
-            app:cardBackgroundColor="#00FFFFFF"
-            app:cardElevation="0dp"
-            app:cardMaxElevation="0dp"
-            app:layout_constraintBottom_toBottomOf="@id/titel_text"
-            app:layout_constraintEnd_toEndOf="@id/titel_text"
-            app:layout_constraintStart_toStartOf="@id/titel_text"
-            app:layout_constraintTop_toTopOf="@id/titel_text"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/titel_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="46dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="24dp"
-            android:fontFamily="@font/bungee"
-            android:letterSpacing="0.125"
-            android:lineSpacingExtra="14sp"
-            android:paddingStart="30dp"
-            android:paddingEnd="30dp"
-            android:text="PHONE BOOK"
-            android:textAlignment="center"
-            android:textAppearance="@style/TitelTextStyle"
-            android:translationZ="1dp"
-            app:layout_constraintBottom_toTopOf="@+id/entry_recycler"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.94"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <View
-            android:id="@+id/newEntry_view"
-            android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:background="@color/white_variant"
-            android:translationZ="2dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/separator_text"
-            android:layout_width="match_parent"
-            android:layout_height="4dp"
-            android:background="@color/green_grey_dark"
-            android:text="TextView"
-            android:translationZ="2dp"
-            app:layout_constraintBottom_toTopOf="@+id/newEntry_view"
-            app:layout_constraintTop_toBottomOf="@id/entry_recycler" />
-
-        <EditText
-            android:id="@+id/input_number_text"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="8dp"
-            android:ems="10"
-            android:hint="Mobile number"
-            android:inputType="number"
-            android:minHeight="48dp"
-            android:textAppearance="@style/InputTextStyle"
-            android:translationZ="2dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/addEntry_button"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/input_name_text" />
-
-        <EditText
-            android:id="@+id/input_name_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="8dp"
-            android:ems="10"
-            android:hint="Name"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:textAppearance="@style/InputTextStyle"
-            android:translationZ="2dp"
-            app:layout_constraintBottom_toTopOf="@id/input_number_text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/newEntry_view" />
-
-        <Button
-            android:id="@+id/addEntry_button"
-            style="@style/NewEntryButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:text="ADD"
-            android:translationZ="2dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/input_name_text" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/entry_recycler"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="-1dp"
-            android:orientation="vertical"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toTopOf="@id/newEntry_view"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titel_card"
-            app:layout_constraintVertical_bias="0.0"
-            tools:listitem="@layout/entry_item">
-
-        </androidx.recyclerview.widget.RecyclerView>
-
+            app:navGraph="@navigation/nav_graph" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

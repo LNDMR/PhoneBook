@@ -6,9 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.phonebook.R
 import com.example.phonebook.data.modul.Entry
+import com.example.phonebook.ui.HomeFragmentDirections
+import com.google.android.material.card.MaterialCardView
 
 class EntryAdapter(private val dataset: List<Entry>, private val deleteEntry: (Entry) -> Unit)
     : RecyclerView.Adapter<EntryAdapter.ViewHolder>() {
@@ -19,6 +23,7 @@ class EntryAdapter(private val dataset: List<Entry>, private val deleteEntry: (E
         val entryNumber = view.findViewById<TextView>(R.id.entry_number_text)
         val entryImageResource = view.findViewById<ImageView>(R.id.entry_image)
         val deleteImageButton = view.findViewById<ImageView>(R.id.entry_delete_image)
+        val entryCard = view.findViewById<MaterialCardView>(R.id.entry_card)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -40,6 +45,11 @@ class EntryAdapter(private val dataset: List<Entry>, private val deleteEntry: (E
             deleteEntry(entry)
             notifyItemRemoved(position)
             notifyItemRangeChanged(position, dataset.lastIndex)
+        }
+
+        holder.entryCard.setOnClickListener {
+            holder.itemView.findNavController()
+                .navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(entry))
         }
     }
 
